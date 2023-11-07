@@ -1,0 +1,14 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .  # Set the build context to the current directory
+      dockerfile: Dockerfile  # Path to your Dockerfile
+    ports:
+      - "5000:5000"  # Map  host port to container port
+    volumes:
+      - ./uploads:/app/uploads  # Mount the 'uploads' directory for file storage
+    env_file:
+      - .env  # Load environment variables from the .env file
+    environment:
+      - OPENAI_API_KEY=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  # Pass OPENAI_API_KEY as an environment variable
