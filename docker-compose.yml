@@ -9,4 +9,4 @@ services:
     volumes:
       - ./uploads:/app/uploads
     environment:
-      - OPENAI_API_KEY=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    # Set your actual OpenAI API key
+      - OPENAI_API_KEY=yourkey    # Set your actual OpenAI API key

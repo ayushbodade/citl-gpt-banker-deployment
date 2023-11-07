@@ -13,7 +13,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Set environment variables for your Flask application
 ENV FLASK_APP=main.py
 ENV FLASK_ENV=production
-ENV OPENAI_API_KEY=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  
+ENV OPENAI_API_KEY=yourkey
 
 # Expose port 8000 for Gunicorn (adjust if needed)
 EXPOSE 8000
