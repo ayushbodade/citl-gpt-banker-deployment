@@ -1,0 +1,5 @@
+docker-compose build
+docker tag <your-image-id> reggin/citl-gpt-banker-deployment // use "docker images" to find your-image-id
+docker login
+docker push reggin/citl-gpt-banker-deployment
+docker run -d -p 8000:8000 --name my-flask-app reggin/citl-gpt-banker-deployment

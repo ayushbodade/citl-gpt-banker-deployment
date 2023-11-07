@@ -2,13 +2,11 @@ version: '3'
 services:
   web:
     build:
-      context: .  # Set the build context to the current directory
-      dockerfile: Dockerfile  # Path to your Dockerfile
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - "5000:5000"  # Map  host port to container port
+      - "8000:8000"  # Map host port 8000 to container port 8000
     volumes:
-      - ./uploads:/app/uploads  # Mount the 'uploads' directory for file storage
-    env_file:
-      - .env  # Load environment variables from the .env file
+      - ./uploads:/app/uploads
     environment:
-      - OPENAI_API_KEY=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  # Pass OPENAI_API_KEY as an environment variable
+      - OPENAI_API_KEY=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    # Set your actual OpenAI API key
