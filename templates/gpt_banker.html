@@ -3,28 +3,60 @@
 <head>
     <title>Upload and Question</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="gpt_banker.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shorthandcss@1.1.1/dist/shorthand.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:200,300,400,500,600,700,800,900&display=swap" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@400;900&family=Playfair+Display:ital@1&family=Ubuntu&display=swap" rel="stylesheet">
 </head>
-<body>
-    <h1>Welcome to the Upload and Question App</h1>
-    
-    <form action="/upload" method="POST" enctype="multipart/form-data">
-        <input type="file" name="file" accept=".pdf">
-        <input type="submit" value="Upload PDF">
-    </form>
+<body class="bg-black muli">
+    <!-- <div id="image-container">
+        <img src="./florian-klauer-mk7D-4UCfmg-unsplash.jpg" alt="Your Image">
+    </div> -->
 
-    {% if name %}
-    <p>File "{{ name }}" uploaded successfully.</p>
-    <form action="#" method="POST" id="question-form">
-        <input type="hidden" name="file_name" value="{{ name }}">
-        <!-- Add a hidden input field for the file path -->
-        <input type="hidden" name="file_path" value="{{ session.get('file_path') }}">
-        <label for="prompt">Enter your question:</label>
-        <input type="text" name="prompt" id="prompt" required>
-        <input type="submit" value="Ask">
-    </form>
-    
-    <div id="response-div"></div>
-    <script>
+    <section id="home" class="min-h-100vh flex justify-start items-center">
+        <div class="mx-5 md-mx-l5">
+            <div class="inline-block br-round bg-indigo-30 indigo-lightest p-2 fs-s2 mb-5">
+                <div class="inline-block bg-indigo indigo-lightest br-round px-3 py-1 mr-3 fs-s3">Datawiz</div>
+                Hello World ! We are here !
+            </div>
+            <div>
+                <h1 class="white font_header fs-l3 lh-2 md-fs-xl1 md-lh-1 fw-900 ">Welcome to <br />GPT Banker</h1>
+                <div>
+                <form action="/upload" method="POST" enctype="multipart/form-data">
+                <div class="br-8 mt-10 inline-flex">
+                    <input type="file" name="file" accept=".pdf"
+                        class="input-lg half bw-0 fw-200 bg-indigo-lightest-10 white ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 min-w-25vw br-r-0">
+                    <input class="button-lg bg-indigo-lightest-20 indigo-lightest focus-white fw-300 fs-s3 mr-0 br-l-0" type="submit" value="Upload PDF"></input>
+                </div>
+            </form>
+            <div>
+                {% if name %}
+            <p>File "{{ name }}" uploaded successfully.</p>
+            <form action="#" method="POST" id="question-form">
+            <input type="hidden" name="file_name" value="{{ name }}">
+            <!-- Add a hidden input field for the file path -->
+            <input class="input-lg half bw-0 fw-200 bg-indigo-lightest-10 white ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 min-w-25vw br-r-0"type="hidden" name="file_path" value="{{ session.get('file_path') }}">
+            <label for="prompt">Enter your question:</label>
+            <div class="br-8 mt-10 inline-flex">
+            <input class="input-lg half bw-0 fw-200 bg-indigo-lightest-10 white ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 min-w-25vw br-r-0"
+            type="text" name="prompt" id="prompt" required>
+            <input type="submit" value="Ask" class="button-lg bg-indigo-lightest-20 indigo-lightest focus-white fw-300 fs-s3 mr-0 br-l-0 mt-0">
+        </div>
+        </form>
+            </div>
+        </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <div id="response-div" class="white"></div>
+    <script >
         $(document).ready(function() {
             $("#question-form").submit(function(e) {
                 e.preventDefault();
