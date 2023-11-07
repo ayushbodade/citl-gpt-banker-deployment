@@ -46,7 +46,7 @@ app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
 @app.route("/")
 def main():
-    return render_template("index.html")
+    return render_template("gpt_banker.html")
 
 ######################################## GPT BANKER API ###############################################
 
