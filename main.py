@@ -16,10 +16,6 @@ load_dotenv()
 app = Flask(__name__)
 app.secret_key = "mykey"
 
-
-
-
-
 # Define the directory where uploaded files will be stored
 UPLOAD_FOLDER = "uploads"
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
@@ -27,7 +23,7 @@ app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
 @app.route("/")
 def main():
-    return render_template("index.html")
+    return render_template("gpt_banker.html")
 
 ######################################## GPT BANKER API ###############################################
 

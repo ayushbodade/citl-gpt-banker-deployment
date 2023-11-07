@@ -1,0 +1,66 @@
+body {
+    background-color: black; /* Dark background color */
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-weight: bold; /* Make the heading bold */
+    font-family: "Times New Roman", serif; /* Change the font of the heading */
+    color: white; /* Text color for the heading */
+    text-align: left; /* Align the heading to the left */
+}
+
+form {
+    text-align: left; /* Align forms and their contents to the left */
+}
+
+form input[type="file"],
+form input[type="submit"],
+form label {
+    display: block;
+    margin: 10px 0;
+}
+
+#response-div {
+    color: white; /* Text color for response content */
+}
+
+/* Position the image on the right */
+#image-container {
+    position: absolute;
+    right: 100px; /* Adjust as needed */
+    top: 100px; /* Adjust as needed */
+}
+
+#image-container img{
+    border-radius: 24px;
+}
+
+.font_header{
+    font-family: 'Playfair Display', serif;
+}
+/* Style the upload and ask buttons */
+input[type="submit"] {
+    background-color: #4CAF50; /* Green background color */
+    color: white; /* Text color for buttons */
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 5px;
+    cursor: pointer;
+}
+
+input[type="file"] {
+    background-color: #008CBA; /* Blue background color for file input */
+    color: white; /* Text color for file input */
+}
+
+/* Style the labels for input fields */
+label {
+    color: white; /* Text color for labels */
+}
+
+/* Additional styles as needed */
