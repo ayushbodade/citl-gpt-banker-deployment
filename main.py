@@ -17,26 +17,26 @@ app = Flask(__name__)
 app.secret_key = "mykey"
 
 
-# # Define the code you want to add to the beginning of the file
-# custom_code = '''\
-# __import__('pysqlite3')
-# import sys
-# sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
-# '''
+# Define the code you want to add to the beginning of the file
+custom_code = '''\
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+'''
 
-# # Path to the __init__.py file
-# file_path = '/opt/render/project/src/.venv/lib/python3.11/site-packages/chromadb/__init__.py'
+# Path to the __init__.py file
+file_path = '/opt/render/project/src/.venv/lib/python3.11/site-packages/chromadb/__init__.py'
 
-# # Read the existing content of the file
-# with open(file_path, 'r') as file:
-#     existing_content = file.read()
+# Read the existing content of the file
+with open(file_path, 'r') as file:
+    existing_content = file.read()
 
-# # Combine the custom code and existing content
-# new_content = custom_code + existing_content
+# Combine the custom code and existing content
+new_content = custom_code + existing_content
 
-# # Write the updated content back to the file
-# with open(file_path, 'w') as file:
-#     file.write(new_content)
+# Write the updated content back to the file
+with open(file_path, 'w') as file:
+    file.write(new_content)
 
 
 # Define the directory where uploaded files will be stored
